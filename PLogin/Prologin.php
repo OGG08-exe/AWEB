@@ -16,8 +16,9 @@ if ($login_exitoso) {
     header("Location: bienvenida.php");
     exit;
 } else {
-echo "<h1>Usuario o contraseña incorrectos</h1>";
-echo "<p><a href='login.php'>Volver a intentar</a></p>";
+echo "<h1>Usuario o contraseña incorrectos o No tiene cuenta</h1>";
+echo "<p><a href='Login.php'>Volver a intentar</a></p>";
+echo "<p><a href='reg.php'>Registrarse</a></p>";
 }
 ?>
 <!DOCTYPE html>
@@ -28,7 +29,8 @@ echo "<p><a href='login.php'>Volver a intentar</a></p>";
 <link rel="stylesheet" href="reg.css">
 </head>
 <body>
-<h1>Usuario registrado</h1>
-<a href="Login.php"><p>inicia sesión</p></a>
+<h1>Usuario registrado exisotamente</h1>
+<h2>Inicia sesion</h2>
+<a href="Login.php"><p>Facebook Login</p></a>
 </body>
 </html>
