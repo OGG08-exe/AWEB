@@ -11,7 +11,6 @@
     <h1>Registrarse</h1> 
     <h2>¿Ya tienes cuenta?</h2>
         <a href="Login.php">Inicia sesión aqui</a>
-    <div>
         <br>
 <form action="Proreg.php" method="post">
 <label>Usuario:</label>
@@ -21,7 +20,5 @@
      <br>
         <button type="submit">Completar Registro</button>
 </form>
-
-    </div>
     </body>
 </html>
