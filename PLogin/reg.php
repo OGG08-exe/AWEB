@@ -10,7 +10,7 @@
     <h1>Facebook</h1>
     <h1>Registrarse</h1> 
     <h2>¿Ya tienes cuenta?</h2>
-        <a href="Login.php">Inicia sesión aqui</a>
+        <a href="login.php">Inicia sesión aqui</a>
         <br>
 <form action="proreg.php" method="post">
 <label>Usuario:</label>
