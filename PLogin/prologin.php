@@ -2,7 +2,7 @@
 session_start();
     $usuario = $_POST['usuario'];
     $password = $_POST['password'];
-    $usuarios = file("usuarios.txt", FILE_IGNORE_NEW_LINES);
+    $usuarios = file("users.txt", FILE_IGNORE_NEW_LINES);
     $login_exitoso = false;
 foreach ($usuarios as $linea) {
     list($user, $hash) = explode(":", $linea);
@@ -31,6 +31,6 @@ echo "<p><a href='reg.php'>Registrarse</a></p>";
 <body>
 <h1>Usuario registrado exisotamente</h1>
 <h2>Inicia sesion</h2>
-<a href="Login.php"><p>Facebook Login</p></a>
+<a href="login.php"><p>Facebook Login</p></a>
 </body>
 </html>

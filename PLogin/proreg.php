@@ -1,7 +1,7 @@
 <?php
 $usuario = $_POST['usuario'];
 $password = $_POST['password'];
-$file = fopen("usuarios.txt", "a");
+$file = fopen("users.txt", "a");
 fwrite($file, $usuario . ":" . password_hash($password, PASSWORD_DEFAULT) . "\n");
 fclose($file);
 ?>
@@ -14,6 +14,6 @@ fclose($file);
 </head>
 <body>
 <h1>Usuario registrado</h1>
-<a href="Login.php"><p>inicia sesión</p></a>
+<a href="login.php"><p>inicia sesión</p></a>
 </body>
 </html>

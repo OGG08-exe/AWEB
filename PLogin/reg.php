@@ -12,7 +12,7 @@
     <h2>¿Ya tienes cuenta?</h2>
         <a href="Login.php">Inicia sesión aqui</a>
         <br>
-<form action="Proreg.php" method="post">
+<form action="proreg.php" method="post">
 <label>Usuario:</label>
 <input type="text" name="usuario" required><br><br>
 <label>Contraseña:</label>

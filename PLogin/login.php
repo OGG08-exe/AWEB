@@ -7,7 +7,7 @@
 </head>
 <body>
 <h1>Inicia sesión</h1>
-<form action="Prologin.php" method="post">
+<form action="prologin.php" method="post">
     <label>Usuario:</label>
         <input type="text" name="usuario" required><br><br>
     <label>Contraseña:</label>
