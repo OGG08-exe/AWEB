@@ -17,7 +17,7 @@ if ($login_exitoso) {
     exit;
 } else {
 echo "<h1>Usuario o contraseña incorrectos o No tiene cuenta</h1>";
-echo "<p><a href='Login.php'>Volver a intentar</a></p>";
+echo "<p><a href='login.php'>Volver a intentar</a></p>";
 echo "<p><a href='reg.php'>Registrarse</a></p>";
 }
 ?>
@@ -29,8 +29,5 @@ echo "<p><a href='reg.php'>Registrarse</a></p>";
 <link rel="stylesheet" href="reg.css">
 </head>
 <body>
-<h1>Usuario registrado exisotamente</h1>
-<h2>Inicia sesion</h2>
-<a href="login.php"><p>Facebook Login</p></a>
 </body>
 </html>

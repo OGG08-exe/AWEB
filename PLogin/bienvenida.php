@@ -15,6 +15,6 @@ exit;
 <body>
 <h1>Bienvenido, <?php echo $_SESSION['usuario']; ?></h1>
 <p>Has iniciado sesión correctamente.</p>
-<p><a href="Logout.php">Cerrar sesión</a></p>
+<p><a href="logout.php">Cerrar sesión</a></p>
 </body>
 </htm

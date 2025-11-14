@@ -1,7 +1,7 @@
 <?php 
 session_start(); 
 session_destroy(); 
-header("Location: login.php"); 
+header("Location: login.php");
 exit;
 ?>
 <!DOCTYPE html>
@@ -12,8 +12,5 @@ exit;
 <link rel="stylesheet" href="reg.css">
 </head>
 <body>
-<h1>Adios, <?php echo $_SESSION['usuario']; ?></h1>
-<p>Has Cerrado sesión correctamente.</p>
-<p><a href="login.php">Iniciar sesión</a></p>
 </body>
 </htm
