@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+    image-rendering: pixelated;
+}
+
+
+h1 {
+    font-size: 15px;
+    white-space: pre;
+    line-height: 1;
+    color: #0aff0a;
+    position: relative;
+    font-family: monospace;
+    text-shadow: 0 0 8px #00ff55;
+    
+}
+
+h2 {
+    font-family: monospace;
+
+    position: relative;
+    text-shadow: 0 0 3px #00ff55;
+    animation: glitch-skew 1s infinite linear alternate-reverse;
+}
+
+
+.container{
+    position: relative; 
+    overflow: hidden; 
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.486) 0px,
+        rgba(9, 160, 9, 0.405) 2px,
+        transparent 10px,
+        transparent 4px
+    );
+
+    animation: scanlineMove 0.15s linear infinite;
+    opacity: 0.3;
+    z-index: 5;
+}
+
+@keyframes scanlineMove {
+    0% { background-position-y: 0; }
+    100% { background-position-y: 4px; }
+}
+
+p {
+    font-family: monospace;
+    font-size: medium;
+    color: #0aff0a;
+}
+a {
+    font-family: monospace;
+    color: #0aff0a;
+
+}
+body {
+    background: #000;
+    color: #0aff0a;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 40px;
+    height: 100vh;
+}
+
+.container {
+    background: #0a0a0a;
+    border: 2px solid #0aff0a;
+    padding: 20px;
+    width: 300px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    font-size: large;
+
+    /* Efectos añadidos */
+    animation: glitch 3s infinite ease-in-out,
+               flicker 0.3s infinite,
+               glow 2.5s infinite ease-in-out;
+}
+
+
+/* Animación de glitch verde */
+@keyframes glitch {
+    0% { transform: translate(0, 0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(2px, -2px); }
+    60% { transform: translate(-1px, 1px); }
+    80% { transform: translate(1px, -1px); }
+    100% { transform: translate(0, 0); }
+}
+
+/* Parpadeo muy suave estilo monitor */
+@keyframes flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.92; }
+}
+
+/* Brillo dinámico estilo CRT */
+@keyframes glow {
+    0% { box-shadow: 0 0 10px #0aff0a; }
+    50% { box-shadow: 0 0 20px #1aff1a; }
+    100% { box-shadow: 0 0 10px #0aff0a; }
+}
