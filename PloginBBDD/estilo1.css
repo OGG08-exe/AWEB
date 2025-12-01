@@ -23,7 +23,7 @@ h2 {
 
     position: relative;
     text-shadow: 0 0 3px #00ff55;
-    animation: glitch-skew 1s infinite linear alternate-reverse;
+
 }
 
 
@@ -90,30 +90,9 @@ body {
     flex-direction: column;
     font-size: large;
 
-    /* Efectos añadidos */
-    animation: glitch 3s infinite ease-in-out,
-               flicker 0.3s infinite,
-               glow 2.5s infinite ease-in-out;
+    animation: glow 2.5s infinite ease-in-out;
 }
 
-
-/* Animación de glitch verde */
-@keyframes glitch {
-    0% { transform: translate(0, 0); }
-    20% { transform: translate(-2px, 2px); }
-    40% { transform: translate(2px, -2px); }
-    60% { transform: translate(-1px, 1px); }
-    80% { transform: translate(1px, -1px); }
-    100% { transform: translate(0, 0); }
-}
-
-/* Parpadeo muy suave estilo monitor */
-@keyframes flicker {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.92; }
-}
-
-/* Brillo dinámico estilo CRT */
 @keyframes glow {
     0% { box-shadow: 0 0 10px #0aff0a; }
     50% { box-shadow: 0 0 20px #1aff1a; }
