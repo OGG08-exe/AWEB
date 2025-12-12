@@ -1,6 +1,6 @@
 <?php 
 include "conexion.php"; 
- 
+
 $stmt = $pdo->query("SELECT * FROM usuarios"); 
 $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC); 
 ?> 
@@ -9,12 +9,12 @@ $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <head> 
     <meta charset="UTF-8"> 
     <title>Listado de Usuarios</title> 
-    <link rel="stylesheet" href="css/styles.css"> 
+
 </head> 
 <body> 
 <div class="container"> 
     <h1>Usuarios</h1> 
-    <a class="btn" href="create.php">+ Crear Usuario</a> 
+    <a class="btn" href="reg.php">+ Crear Usuario</a> 
  
     <table> 
         <tr> 
@@ -28,8 +28,8 @@ $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <td><?= $u['edad'] ?></td> 
             <td><?= $u['rol'] ?></td> 
             <td> 
-                <a class="btn-edit" href="edit.php?id=<?= $u['id'] ?>">Editar</a> 
-                <a class="btn-delete" href="delete.php?id=<?= $u['id'] ?>">Eliminar</a> 
+                <a class="btn-edit" href="editar.php?id=<?= $u['id'] ?>">Editar</a> 
+                <a class="btn-delete" href="borrar.php?id=<?= $u['id'] ?>">Eliminar</a> 
             </td> 
         </tr> 
         <?php endforeach; ?> 

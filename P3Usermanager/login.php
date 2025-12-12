@@ -18,6 +18,7 @@
     </form>
     <p class="text-small">¿No tienes cuenta? <a href="registro.php">Regístrate aquí</a></p>
   </div>
+ 
 </body>
 </html>
 

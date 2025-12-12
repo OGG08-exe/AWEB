@@ -10,9 +10,9 @@ $stmt = $conn->prepare("INSERT INTO usuarios (nombre, email, password, rol) VALU
 $stmt->bind_param("ssss", $nombre, $email, $password, $rol);
 
 if ($stmt->execute()) {
-    echo "<script>alert('Registro exitoso'); window.location='login.php';</script>";
+    echo "<h1>Registro exitoso</h1>";
 } else {
-    echo "<script>alert('Error: el email ya existe'); window.location='reg.php';</script>";
+    echo "<h1>Registro fallido</h1>";
 }
 
 $stmt->close();

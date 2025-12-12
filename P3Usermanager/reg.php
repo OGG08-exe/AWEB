@@ -16,8 +16,7 @@
 
   <button type="submit">Crear cuenta</button>
 </form>
-
 <a href="login.php">Iniciar sesión</a>
-
 </body>
+<script src="js/validacion.js"></script> 
 </html>

@@ -10,7 +10,7 @@
 <body>
 <div class="container">
     <h1>Gestor de usuarios</h1>
-    <a class="btn" href="list.php">ir al CRUD</a>
+    <a class="btn" href="lista.php">ir al CRUD</a>
 </div>
 </body>
 </html>
