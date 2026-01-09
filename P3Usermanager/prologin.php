@@ -1,33 +1,22 @@
-<?php
-session_start();
-include "conexion.php";
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
 
-$email = $_POST['email'];
-$password = $_POST['password'];
+<h2>Login</h2>
 
-$stmt = $conn->prepare("SELECT id, nombre, password, rol FROM usuarios WHERE email = ?");
-$stmt->bind_param("s", $email);
-$stmt->execute();
-$stmt->store_result();
+<?php if (isset($_GET['error'])): ?>
+<p style="color:red">Login incorrecto</p>
+<?php endif; ?>
 
-if ($stmt->num_rows === 1) {
-    $stmt->bind_result($id, $nombre, $hash, $rol);
-    $stmt->fetch();
+<form method="POST" action="prolog.php">
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="password" name="password" placeholder="Contraseña" required>
+    <button>Entrar</button>
+</form>
 
-    if (password_verify($password, $hash)); {
-        $_SESSION['user_id'] = $id;
-        $_SESSION['nombre'] = $nombre;
-        $_SESSION['rol'] = $rol;
-
-        header("Location: dashboard.php");
-        exit;
-    } else {
-       ( echo "Contraseña incorrecta");
-    }
-} else {
-   ( echo "mail no encontrado");
-}
-
-$stmt->close();
-$conn->close();
-?>
+</body>
+</html>

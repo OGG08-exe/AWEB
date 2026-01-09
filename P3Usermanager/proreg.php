@@ -1,20 +1,32 @@
 <?php
 include "conexion.php";
 
-$nombre = $_POST['nombre'];
-$email = $_POST['email'];
-$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-$rol = "user";
-
-$stmt = $conn->prepare("INSERT INTO usuarios (nombre, email, password, rol) VALUES (?, ?, ?, ?)");
-$stmt->bind_param("ssss", $nombre, $email, $password, $rol);
-
-if ($stmt->execute()) {
-    echo "<h1>Registro exitoso</h1>";
-} else {
-    echo "<h1>Registro fallido</h1>";
+if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+    die("Acceso no permitido");
 }
 
-$stmt->close();
-$conn->close();
-?>
+$nombre = trim($_POST['nombre']);
+$email = trim($_POST['email']);
+$password = $_POST['password'];
+
+
+
+$stmt = $pdo->prepare("SELECT id FROM usuarios WHERE email = ?");
+$stmt->execute([$email]);
+
+if ($stmt->rowCount() > 0) {
+    header("Location: reg.php?error=1");
+    exit;
+}
+
+$hash = password_hash($password, PASSWORD_DEFAULT);
+
+$stmt = $pdo->prepare(
+    "INSERT INTO usuarios (nombre, email, password, rol)
+     VALUES (?, ?, ?, 'user')"
+);
+
+$stmt->execute([$nombre, $email, $hash]);
+
+header("Location: login.php");
+exit;

@@ -4,7 +4,7 @@ USE usermanager;
 CREATE TABLE usuarios ( 
 id INT AUTO_INCREMENT PRIMARY KEY, 
 nombre VARCHAR(50) NOT NULL, 
-email VARCHAR(100) NOT NULL, 
+email VARCHAR(100) NOT NULL UNIQUE, 
 edad INT NOT NULL, 
 password VARCHAR(255) NOT NULL, 
 rol ENUM('admin','user') NOT NULL 

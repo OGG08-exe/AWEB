@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Registro</title>
+    <meta charset="UTF-8">
+    <title>Registro</title>
 </head>
 <body>
-<h1>registro</h1>
+
 <h2>Registro</h2>
 
-<form action="proreg.php" method="POST">
-  <input type="text" name="nombre" placeholder="Nombre" required><br><br>
-  <input type="email" name="email" placeholder="Email" required><br><br>
-  <input type="password" name="password" placeholder="Contraseña" required><br><br>
-  <input type="number" name="edad" placeholder="edad" required><br><br>
+<?php if (isset($_GET['error'])): ?>
+<p style="color:red">Ese email ya existe</p>
+<?php endif; ?>
 
-  <button type="submit">Crear cuenta</button>
+<form method="POST" action="proreg.php">
+    <input type="text" name="nombre" placeholder="Nombre" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="password" name="password" placeholder="Contraseña" required>
+    <button>Registrar</button>
 </form>
-<a href="login.php">Iniciar sesión</a>
+
 </body>
-<script src="js/validacion.js"></script> 
 </html>
