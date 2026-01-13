@@ -1,13 +1,13 @@
-<?php
-$host = "localhost";
-$user = "OGGO";
-$pass = "P@ssw0rd";
-$db = "usermanager";
 
-try { 
-$pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8mb4", $user, $pass); 
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
-} catch (PDOException $e) { 
-die("Error de conexión: " . $e->getMessage()); 
-} 
+<?php 
+$host= "localhost";
+$user= "OGGO";
+$pass ="P@ssw0rd";
+$db ="usermanager";
+
+$conn = new mysqli($host,$user,$pass,$db);
+
+if ($conn->connect_error){
+    die("Error de conexión".$conn-> connect_error);
+}
 ?>

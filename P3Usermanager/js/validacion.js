@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() { 
     const form = document.querySelector("form"); 
  
-    if (!form) return; // No hay formulario en esta página 
- 
     form.addEventListener("submit", function(event) { 
         const nombre = form.nombre.value.trim(); 
         const email = form.email.value.trim(); 
@@ -32,5 +30,17 @@ document.addEventListener("DOMContentLoaded", function() {
             event.preventDefault(); // Evita que se envíe el formulario 
             alert(errores.join("\n")); 
         } 
+        
     }); 
 });
+
+function validarLogin() {
+    let email = document.getElementById("email").value.trim();
+    let password = document.getElementById("password").value;
+
+    if (email === "" || password === "") {
+        alert("Complete email y contraseña");
+        return false;
+    }
+    return true;
+}

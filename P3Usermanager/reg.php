@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Registro</title>
+  <meta charset="UTF-8">
+  <title>Registro</title>
+   <link rel="stylesheet" href="css.css">
 </head>
 <body>
 
 <h2>Registro</h2>
 
-<?php if (isset($_GET['error'])): ?>
-<p style="color:red">Ese email ya existe</p>
-<?php endif; ?>
+<form method="POST" action="proreg.php" onsubmit="return validarRegistro();">
 
-<form method="POST" action="proreg.php">
-    <input type="text" name="nombre" placeholder="Nombre" required>
-    <input type="email" name="email" placeholder="Email" required>
-    <input type="password" name="password" placeholder="Contraseña" required>
-    <button>Registrar</button>
+    <input type="text" name="nombre" id="nombre" placeholder="Nombre">
+
+    <input type="email" name="email" id="email" placeholder="Email">
+
+    <input type="password" name="password" id="password" placeholder="Contraseña">
+
+    <input type="number" name="edad" id="edad" placeholder="Edad">
+
+    <button type="submit">Registrarse</button>
+
 </form>
+
+<script src="js/validacion.js"></script>
+
+<a href="login.php">Iniciar sesión</a>
 
 </body>
 </html>
+

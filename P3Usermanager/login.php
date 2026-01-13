@@ -1,26 +1,30 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
   <meta charset="UTF-8">
   <title>Login</title>
-  <link rel="stylesheet" href="estilo.css">
+  <link rel="stylesheet" href="css/css.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Iniciar sesión</h1>
-    <form action="prologin.php" method="post">
-      <label>email:</label>
-      <input type="text" name="email" required>
-      <label>Contraseña:</label>
-      <input type="password" name="password" required>
-      
-      <button type="submit">Entrar</button>
-    </form>
-    <p >¿No tienes cuenta? <a href="reg.php">Regístrate aquí</a></p>
-  </div>
- 
+
+<h2>Iniciar sesión</h2>
+<form method="POST" action="log.php" onsubmit="return validarLogin();">
+
+    <input type="email" name="email" id="email" placeholder="Email">
+
+    <input type="password" name="password" id="password" placeholder="Contraseña">
+
+    <button type="submit">Entrar</button>
+
+</form>
+
+<script src="js/validaciones.js"></script>
+
+<a href="reg.php">Crear cuenta</a>
+
 </body>
 </html>
+
 
 
 

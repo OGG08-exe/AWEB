@@ -1,32 +1,51 @@
 <?php
 include "conexion.php";
 
-if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-    die("Acceso no permitido");
-}
-
 $nombre = trim($_POST['nombre']);
 $email = trim($_POST['email']);
 $password = $_POST['password'];
+$edad = empty($_POST['edad']) ? 0 : (int)$_POST['edad'];
+$rol = "user";
 
-
-
-$stmt = $pdo->prepare("SELECT id FROM usuarios WHERE email = ?");
-$stmt->execute([$email]);
-
-if ($stmt->rowCount() > 0) {
-    header("Location: reg.php?error=1");
-    exit;
+if ($nombre === "" || $email === "" || $password === "") {
+    die("<h1>Campos obligatorios vacíos</h1>");
 }
 
-$hash = password_hash($password, PASSWORD_DEFAULT);
+$check = $conn->prepare("SELECT id FROM usuarios WHERE email = ?");
+$check->bind_param("s", $email);
+$check->execute();
+$check->store_result();
 
-$stmt = $pdo->prepare(
-    "INSERT INTO usuarios (nombre, email, password, rol)
-     VALUES (?, ?, ?, 'user')"
+if ($check->num_rows > 0) {
+    $check->close();
+    die("<h1>El email ya está registrado.</h1> <a href='reg.php'>Volver</a>");
+}
+$check->close();
+
+$password_hash = password_hash($password, PASSWORD_DEFAULT);
+
+$stmt = $conn->prepare(
+    "INSERT INTO usuarios (nombre, email, password, edad, rol)
+     VALUES (?, ?, ?, ?, ?)"
 );
+$stmt->bind_param("sssis", $nombre, $email, $password_hash, $edad, $rol);
 
-$stmt->execute([$nombre, $email, $hash]);
-
-header("Location: login.php");
-exit;
+if ($stmt->execute()) {
+    header("Location: login.php?registro=ok");
+    exit;
+} else {
+    die("<h1>Error al registrar: </h1>" . $stmt->error);
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/css.ss">
+</head>
+<body>
+    
+</body>
+</html>

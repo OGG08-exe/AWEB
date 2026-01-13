@@ -1,16 +1,28 @@
-<?php include "conexion.php"; ?>
+<?php
+session_start();
+
+//Si ya está logado, ir al dashboard
+if (isset($_SESSION['user_id'])) {
+    header("Location: dashboard.php");
+    exit;
+}
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestor de usuarios</title>
-
+    <title>UserManager</title>
+    <link rel="stylesheet" href="css/css.css">
 </head>
 <body>
-<div class="container">
-    <h1>Gestor de usuarios</h1>
-    <a class="btn" href="lista.php">ir al CRUD</a>
-</div>
+
+<h1>Bienvenido a UserManager</h1>
+
+<p>Proyecto de gestión de usuarios</p>
+
+<a href="login.php">Iniciar sesión</a> |
+<a href="reg.php">Registrarse</a>
+
 </body>
 </html>
