@@ -29,12 +29,13 @@ $result = $conn->query(
     <td>
         <a href="editar.php?id=<?= $u['id'] ?>">Editar</a> |
        <a href="borrar.php?id=<?= $u['id'] ?>"
-        onclick="return confirmarBorrado();">
+        onclick=" confirmarBorrado();">
    Borrar
 </a>
 
     </td>
 </tr>
+  
 <?php endwhile; ?>
 </table>
 <!DOCTYPE html>
@@ -46,6 +47,7 @@ $result = $conn->query(
     <link rel="stylesheet" href="../css/css.css">
 </head>
 <body>
-    
+
 </body>
 </html>
+  <script src="../js/validacion.js"></script>

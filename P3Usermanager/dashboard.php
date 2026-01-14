@@ -28,10 +28,11 @@ if (!isset($_SESSION['user_id'])) {
 <?php endif; ?>
 
 <p><a href="logout.php"
-   onclick="return confirmarLogout();">
+   onclick="confirmarLogout();">
    Cerrar sesión
 </a>
 </p>
 
 </body>
 </html>
+  <script src="js/validacion.js"></script>
