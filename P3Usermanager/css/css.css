@@ -1,90 +1,87 @@
-/* Estilo general */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f9f9f9;
-    color: #1a1a1a;
-    line-height: 1.6;
+* {
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Titulos */
-h1, h2, h3 {
-    color: #004080; /* azul institucional */
-    margin-bottom: 10px;
+body {
+    min-height: 100vh;
+    background: #f2f4f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Párrafos */
-p {
-    margin-bottom: 15px;
-    color: #333;
+form {
+    background: #ffffff;
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-/* Links */
-a {
-    color: #0066cc;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
+
+h1, h2 {
+    text-align: center;
+    color: #1f2a44;
 }
 
-a:hover {
-    color: #004080;
+input, select {
+    padding: 10px;
+    border: 1px solid #ccd1db;
+    border-radius: 5px;
+    font-size: 14px;
 }
 
-/* Botones */
 button {
-    background-color: #004080; /* azul fuerte */
+    padding: 10px;
+    background: #1f5cff;
     color: white;
     border: none;
-    padding: 12px 25px;
-    border-radius: 6px;
+    border-radius: 5px;
+    font-weight: bold;
     cursor: pointer;
-    font-weight: 600;
-    transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #003060;
+    background: #1746c7;
 }
 
-/* Formularios simples */
-input, textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+a {
+    text-align: center;
+    color: #1f5cff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+
+p {
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+}
+
+table {
     width: 100%;
-    box-sizing: border-box;
-    margin-bottom: 15px;
+    max-width: 700px;
+    background: #ffffff;
+    border-collapse: collapse;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
-/* Imágenes y logos */
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Listas */
-ul, ol {
-    margin-bottom: 15px;
-    padding-left: 20px;
-}
-
-/* Encabezado simple tipo banner */
-header {
-    background-color: #004080;
-    color: white;
-    padding: 15px 20px;
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
     text-align: center;
-    font-size: 1.2rem;
 }
 
-/* Footer */
-footer {
-    background-color: #e0e0e0;
-    color: #333;
-    padding: 15px 20px;
-    text-align: center;
-    font-size: 0.9rem;
-    margin-top: 30px;
+th {
+    background: #f0f3f8;
 }
+

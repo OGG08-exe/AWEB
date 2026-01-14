@@ -4,7 +4,7 @@ include "auth_admin.php";
 
 $id = $_GET['id'];
 
-/* obtener usuario */
+// obtener usuario 
 $stmt = $conn->prepare(
     "SELECT nombre, email, edad, rol FROM usuarios WHERE id = ?"
 );
@@ -12,7 +12,7 @@ $stmt->bind_param("i", $id);
 $stmt->execute();
 $user = $stmt->get_result()->fetch_assoc();
 
-/* actualizar */
+// actualizar la tabla
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $nombre = $_POST['nombre'];
     $email = $_POST['email'];

@@ -8,7 +8,7 @@
 <body>
 
 <h2>Iniciar sesión</h2>
-<form method="POST" action="log.php" onsubmit="return validarLogin();">
+<form method="POST" action="prologin.php"  onsubmit="return validarFormulario();">
 
     <input type="email" name="email" id="email" placeholder="Email">
 
@@ -18,7 +18,7 @@
 
 </form>
 
-<script src="js/validaciones.js"></script>
+<script src="js/validacion.js"></script>
 
 <a href="reg.php">Crear cuenta</a>
 

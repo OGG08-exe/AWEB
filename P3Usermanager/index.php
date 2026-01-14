@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-//Si ya está logado, ir al dashboard
 if (isset($_SESSION['user_id'])) {
     header("Location: dashboard.php");
     exit;

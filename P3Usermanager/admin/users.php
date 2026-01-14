@@ -28,9 +28,24 @@ $result = $conn->query(
     <td><?= $u['rol'] ?></td>
     <td>
         <a href="editar.php?id=<?= $u['id'] ?>">Editar</a> |
-        <a href="borrar.php?id=<?= $u['id'] ?>"
-           onclick="return confirm('¿Seguro?')">Borrar</a>
+       <a href="borrar.php?id=<?= $u['id'] ?>"
+        onclick="return confirmarBorrado();">
+   Borrar
+</a>
+
     </td>
 </tr>
 <?php endwhile; ?>
 </table>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/css.css">
+</head>
+<body>
+    
+</body>
+</html>

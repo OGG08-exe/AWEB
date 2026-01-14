@@ -4,13 +4,13 @@ include "conexion.php";
 $nombre = trim($_POST['nombre']);
 $email = trim($_POST['email']);
 $password = $_POST['password'];
-$edad = empty($_POST['edad']) ? 0 : (int)$_POST['edad'];
+$edad = ($_POST['edad']);
 $rol = "user";
-
+// comprobacion de campos
 if ($nombre === "" || $email === "" || $password === "") {
     die("<h1>Campos obligatorios vacíos</h1>");
 }
-
+// check mira selecciona el email y mira si existe en la tabla
 $check = $conn->prepare("SELECT id FROM usuarios WHERE email = ?");
 $check->bind_param("s", $email);
 $check->execute();
@@ -21,9 +21,9 @@ if ($check->num_rows > 0) {
     die("<h1>El email ya está registrado.</h1> <a href='reg.php'>Volver</a>");
 }
 $check->close();
-
+//hash de la contraseña
 $password_hash = password_hash($password, PASSWORD_DEFAULT);
-
+// prepara las celdas para insertar lo registrado
 $stmt = $conn->prepare(
     "INSERT INTO usuarios (nombre, email, password, edad, rol)
      VALUES (?, ?, ?, ?, ?)"

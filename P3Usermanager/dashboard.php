@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-// proteger acceso
+// protege el acceso mirando el id del usuario
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
     exit;
@@ -27,7 +27,11 @@ if (!isset($_SESSION['user_id'])) {
     <p><a href="admin/users.php">Panel de administración</a></p>
 <?php endif; ?>
 
-<p><a href="logout.php">Cerrar sesión</a></p>
+<p><a href="logout.php"
+   onclick="return confirmarLogout();">
+   Cerrar sesión
+</a>
+</p>
 
 </body>
 </html>
