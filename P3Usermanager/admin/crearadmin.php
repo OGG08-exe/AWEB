@@ -7,7 +7,7 @@ $password = "P@ssw0rd";
 $edad = 30;
 $rol = "admin";
 
-/* comprobar si ya existe */
+// comprobar si ya existe 
 $check = $conn->prepare("SELECT id FROM usuarios WHERE email = ?");
 $check->bind_param("s", $email);
 $check->execute();
@@ -18,7 +18,7 @@ if ($check->num_rows > 0) {
 }
 $check->close();
 
-/* crear admin */
+// crear admin
 $hash = password_hash($password, PASSWORD_DEFAULT);
 
 $stmt = $conn->prepare(

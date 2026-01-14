@@ -23,7 +23,7 @@ form {
 
     display: flex;
     flex-direction: column;
-    gap: 15px;
+
 }
 
 
@@ -49,9 +49,7 @@ button {
     cursor: pointer;
 }
 
-button:hover {
-    background: #1746c7;
-}
+
 
 a {
     text-align: center;
