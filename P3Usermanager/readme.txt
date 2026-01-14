@@ -28,7 +28,7 @@ Tecnologías usadas
 2. crear una tabla con`CREACIONDB.sql` 
 3.Configurar `conexion.php` con tus credenciales
 
-    Admin por defecto:** `admin@system.com` / `P@ssw0rd`
+    Admin por defecto:*`admin@system.com` / `P@ssw0rd`
 
 Seguridad
 
@@ -37,5 +37,5 @@ Seguridad
     Validación JS + PHP
 
 Ruta de uso
-* Usuario: Registro → Login → Dashboard → Logout
-* Admin: Login → Dashboard → Panel Admin → Gestión de usuarios
+ Usuario: Registro → Login → Dashboard → Logout
+ Admin: Login → Dashboard → Panel Admin → Gestión de usuarios
