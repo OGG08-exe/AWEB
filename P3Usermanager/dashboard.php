@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// protege el acceso mirando el id del usuario
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
     exit;

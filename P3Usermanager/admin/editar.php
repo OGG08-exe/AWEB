@@ -29,7 +29,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     exit;
 }
 ?>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/css.css">
+</head>
+<body>
 <form method="POST">
     <input type="text" name="nombre" value="<?= $user['nombre'] ?>" required>
     <input type="email" name="email" value="<?= $user['email'] ?>" required>
@@ -40,3 +48,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </select>
     <button>Guardar</button>
 </form>
+    
+</body>
+</html>

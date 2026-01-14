@@ -18,7 +18,6 @@ if ($check->num_rows > 0) {
 }
 $check->close();
 
-// crear admin
 $hash = password_hash($password, PASSWORD_DEFAULT);
 
 $stmt = $conn->prepare(

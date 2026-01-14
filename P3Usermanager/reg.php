@@ -9,8 +9,7 @@
 
 <h2>Registro</h2>
 
-<form method="POST" action="proreg.php onsubmit="return validarFormulario(); >
-
+<form method="POST" action="proreg.php"  onsubmit="return validarFormulario();">
     <input type="text" name="nombre" id="nombre" placeholder="Nombre">
 
     <input type="email" name="email" id="email" placeholder="Email">
